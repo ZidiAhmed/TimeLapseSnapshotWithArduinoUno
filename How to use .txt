@@ -1,0 +1,77 @@
+### Project Title: Time-Lapse Snapshot System
+
+**Created by Ahmed Alzeidi, Software Engineering**
+
+#### Overview:
+The Time-Lapse Snapshot System is a versatile and efficient solution designed to capture images at specified intervals and create time-lapse videos. The system incorporates a Python script for image capture and video creation, with the option to integrate an Arduino Uno for hardware-based triggering. This project is particularly useful for creating time-lapse videos over extended periods, such as capturing the progression of seasons or long-term events.
+
+#### Components:
+1. **Python Script:**
+   - Captures images at regular intervals (default: 5 minutes).
+   - Embeds timestamp, date, day name, and creator information on each image.
+   - Organizes images into folders based on capture frequency (Monthly, 6-Month, Yearly).
+   - Creates time-lapse videos from captured images.
+
+2. **Optional Arduino Integration:**
+   - Puts the Arduino into low-power sleep mode.
+   - Wakes up on a button press (connected to pin 2).
+   - Sends a signal to the Python script to capture an image.
+   - Enhances power efficiency for long-term operation.
+
+#### Benefits:
+1. **Long-Term Capture:**
+   - Ideal for projects requiring continuous image capture over extended periods (months or years).
+
+2. **Flexible Capture Frequency:**
+   - Adjustable capture intervals (5 minutes by default) to suit project requirements.
+
+3. **Time-Lapse Video Creation:**
+   - Automatically compiles captured images into monthly, 6-month, and yearly time-lapse videos.
+
+4. **Embedded Information:**
+   - Each image includes timestamp, date, day name, and creator information for reference.
+
+5. **Low-Power Operation with Arduino:**
+   - Arduino integration allows for power-efficient sleep mode between captures, extending battery life.
+
+#### System Workflow:
+
+1. **Image Capture:**
+   - Python script captures images with embedded information every 5 minutes (adjustable).
+   - Timestamped images are stored in the "images" folder.
+
+2. **Video Creation:**
+   - Monthly Video: Videos are created monthly from the images in the "MonthlyVideo" folder.
+   - 6-Month Video: After 6 months, a video is created from the "SixMonthVideo" folder.
+   - Yearly Video: At the end of the year, a video is created from the "OneYearVideo" folder.
+
+3. **Arduino Integration (Optional):**
+   - The Arduino can be connected for low-power sleep mode and hardware-triggered image capture.
+   - The button press on the Arduino triggers the capture signal to the Python script.
+
+#### Installing the System on Arduino:
+
+1. **Connect Arduino:**
+   - Connect the Arduino Uno to your computer via USB.
+   - Ensure the button is connected to pin 2 on the Arduino.
+
+2. **Upload Arduino Code:**
+   - Open the Arduino IDE.
+   - Copy and paste the Arduino code into a new sketch.
+   - Upload the code to the Arduino.
+
+3. **Run Python Script:**
+   - Install Python on your computer.
+   - Copy the Python script code into a file (e.g., `timelapse.py`).
+   - Execute the script using `python timelapse.py` in the terminal.
+
+#### Battery Requirements:
+- The battery requirement depends on the expected capture frequency and the overall project duration.
+- For extended projects (e.g., one year), consider using a power-efficient source or periodically replace batteries.
+
+#### Memory and Capacity:
+- Arduino Uno has 32KB of flash memory, which is sufficient for the provided code.
+- Ensure sufficient storage on the device for storing captured images and videos.
+
+#### Conclusion:
+The Time-Lapse Snapshot System provides a robust solution for continuous image capture, time-lapse video creation, and optional low-power operation with Arduino integration. It is a versatile tool for projects requiring long-term monitoring and documentation.
